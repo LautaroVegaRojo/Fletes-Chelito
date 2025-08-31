@@ -4,7 +4,6 @@ import { useSpring, animated } from "@react-spring/web";
 import "./AnimatedCustomNavbar.css";
 import ChelitoWordmark from "./ChelitoWordmark";
 
-
 const AnimatedCustomNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -43,14 +42,22 @@ const AnimatedCustomNavbar = () => {
       <Navbar expand="lg" variant="dark" className="h-100">
         <Container fluid className="h-100 px-lg-5 d-flex align-items-center">
           {/* Logo + Marca */}
-          <Navbar.Brand href="#home" className="d-flex align-items-center gap-2">
-  {/* Si querés mantener el ISO a la izquierda, dejá el <img>. Si no, removelo */}
-    <img src="/ChelitoISO.svg" width="80" height="80" alt="" className="me-1 d-none d-md-inline" />
-  <ChelitoWordmark variant="playful" />
-</Navbar.Brand>
+          <Navbar.Brand
+            href="#home"
+            className="d-flex align-items-center gap-2"
+          >
+            {/* Si querés mantener el ISO a la izquierda, dejá el <img>. Si no, removelo */}
+            <img
+              src="/ChelitoISO.svg"
+              width="80"
+              height="80"
+              alt=""
+              className="me-1 d-none d-md-inline"
+            />
+            <ChelitoWordmark variant="playful" />
+          </Navbar.Brand>
 
           {/* Ubicación en desktop */}
-
 
           {/* Toggle */}
           <animated.div style={toggleAnimation}>
@@ -61,9 +68,7 @@ const AnimatedCustomNavbar = () => {
           </animated.div>
 
           {/* Links */}
-          <Navbar.Collapse
-            id="basic-navbar-nav"
-          >
+          <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto custom-nav-links">
               {menuLinks.map((link, index) => (
                 <Nav.Link
